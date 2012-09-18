@@ -1,0 +1,169 @@
+//
+// Navbars (Redux)
+// --------------------------------------------------
+
+
+@import "variables.less";
+@import "mixins.less";
+
+//const difine
+
+@navbarHeight:40px;
+@navbarBorderColor:#333333;
+@navbarBackgroundColor:#222222;
+@navbarBackgroundColorLight:lighten(#222222,25%);
+@fontFamily:    "Microsoft Yahei", "Î¢ÈíÑÅºÚ", Tahoma, Arial, Helvetica, STHeiti;
+@navbarColor:#999;
+
+
+#caret {
+	.arrowTop(@color:#EEE,@width:7px){
+		border-bottom:@width solid @color;
+		border-left:  @width dashed transparent;
+		border-right: @width dashed transparent;
+		display:inline-block;
+		line-height:0;
+	}
+	.arrowRight(@color:#EEE,@width:7px){
+		border-bottom:@width dashed transparent;
+		border-top:  @width dashed transparent;
+		border-left: @width solid @color;
+		display:inline-block;
+		line-height:0;
+	}
+	.arrowBottom(@color:#EEE,@width:7px){
+		border-top:@width solid @color;
+		border-left:  @width dashed transparent;
+		border-right: @width dashed transparent;
+		display:inline-block;
+		line-height:0;
+	}
+	.arrowLeft(@color:#EEE,@width:7px){
+		border-bottom:@width dashed transparent;
+		border-top:  @width dashed transparent;
+		border-right: @width solid @color;
+		display:inline-block;
+		line-height:0;
+	}
+}
+
+
+
+// COMMON STYLES
+// -------------
+
+// Base class and wrapper
+.navbar {
+  font-family:@fontFamily;
+  overflow: visible;
+  margin-bottom: @baseLineHeight;
+  color: @navbarText;
+
+  // Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar
+  *position: relative;
+  *z-index: 2;
+}
+
+// Inner for background effects
+// Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
+.navbar-inner {
+  min-height: @navbarHeight;
+  _height:@navbarHeight;
+  padding-left:  20px;
+  padding-right: 20px;
+  #gradient > .vertical(lighten(@navbarBackgroundColor,25%), @navbarBackgroundColor);
+  border: 1px solid @navbarBorderColor;
+  .box-shadow(0 2px 8px rgba(0,0,0,.5));
+}
+.navbar-container{
+   	padding:0 20px;
+}
+.navbar-brand{
+	float:left;
+	color:#FFF;
+	font-size:20px;
+	padding-left:10px;
+	line-height:@navbarHeight;
+	text-decoration:none;
+	text-shadow:0 1px 0 #2d2d2d;
+	
+}
+
+.nav-divider{
+	height:@navbarHeight;
+	border-left:1px solid #CCC;
+	border-right:1px solid #333;
+}
+
+.nav{
+	float:left;
+	padding-left:20px;
+}
+.nav li{float:left;}
+.nav .nav-item{
+	display:block;
+	padding:((@navbarHeight - @baseLineHeight) / 2) 20px ((@navbarHeight - @baseLineHeight) / 2);
+	text-decoration:none;
+	color:@navbarColor;
+	&:hover,
+	&:focus{
+		background-color:transparent;
+		color:#eee;
+	}
+}
+.nav .nav-divider{
+	border-left-color:@navbarBackgroundColor;
+	border-right-color:@navbarBackgroundColorLight;
+}
+.nav-active .nav-item{
+	color:#efefef;
+	text-decoration: none;
+	background-color: darken(@navbarBackgroundColor,15%);
+	&:hover{
+		color:#FFF;
+		background-color:darken(@navbarBackgroundColor,17%);
+	}
+}
+.navbar .caret{
+	vertical-align:middle;
+	#caret .arrowBottom(@navbarColor,5px);
+}
+
+.navbar-drop{
+	position:relative;
+}
+.navbar-dropmenu{
+	position:absolute;
+	top:100%;
+	left:0;
+	padding:5px 0;
+	min-width:150px;
+	_width:150px;
+	
+	background:#F5F5F5;
+	border:1px solid #CCC;
+	.border-radius(5px 5px 5px 5px);
+	.box-shadow(0 2px 4px rgba(0,0,0,.25));
+	li{
+		float:none;
+	}
+	a{
+		display:block;
+		color:#333;
+		text-decoration:none;
+		padding-left:15px;
+		height:24px;
+		line-height:24px;
+		&:hover{
+			background:#CCC;
+		}		
+	}
+	.drop-divider{
+		border-top:1px solid #FFF;
+		border-bottom:1px solid #CCC;
+		margin:3px 0;
+	}
+}
+
+
+

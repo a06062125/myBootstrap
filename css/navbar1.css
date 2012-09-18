@@ -1,0 +1,152 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.navbar {
+  font-family: "Microsoft Yahei", "Î¢ÈíÑÅºÚ", Tahoma, Arial, Helvetica, STHeiti;
+  overflow: visible;
+  margin-bottom: 20px;
+  color: #555555;
+  *position: relative;
+  *z-index: 2;
+}
+.navbar-inner {
+  min-height: 40px;
+  _height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #484848;
+  background-image: -moz-linear-gradient(top, #626262, #222222);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#626262), to(#222222));
+  background-image: -webkit-linear-gradient(top, #626262, #222222);
+  background-image: -o-linear-gradient(top, #626262, #222222);
+  background-image: linear-gradient(to bottom, #626262, #222222);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff626262', endColorstr='#ff222222', GradientType=0);
+  border: 1px solid #333333;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.navbar-container {
+  padding: 0 20px;
+}
+.navbar-brand {
+  float: left;
+  color: #FFF;
+  font-size: 20px;
+  padding-left: 10px;
+  line-height: 40px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #2d2d2d;
+}
+.nav-divider {
+  height: 40px;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #333;
+}
+.nav {
+  float: left;
+  padding-left: 20px;
+}
+.nav li {
+  float: left;
+}
+.nav .nav-item {
+  display: block;
+  padding: 10px 20px 10px;
+  text-decoration: none;
+  color: #999999;
+}
+.nav .nav-item:hover,
+.nav .nav-item:focus {
+  background-color: transparent;
+  color: #eee;
+}
+.nav .nav-divider {
+  border-left-color: #222222;
+  border-right-color: #626262;
+}
+.nav-active .nav-item {
+  color: #efefef;
+  text-decoration: none;
+  background-color: #000000;
+}
+.nav-active .nav-item:hover {
+  color: #FFF;
+  background-color: #000000;
+}
+.navbar .caret {
+  vertical-align: middle;
+  border-top: 5px solid #999999;
+  border-left: 5px dashed transparent;
+  border-right: 5px dashed transparent;
+  display: inline-block;
+  line-height: 0;
+  border-top: 5px solid #999999;
+  border-left: 5px dashed transparent;
+  border-right: 5px dashed transparent;
+  display: inline-block;
+  line-height: 0;
+}
+.navbar-drop {
+  position: relative;
+}
+.navbar-dropmenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 5px 0;
+  min-width: 150px;
+  _width: 150px;
+  background: #F5F5F5;
+  border: 1px solid #CCC;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+.navbar-dropmenu li {
+  float: none;
+}
+.navbar-dropmenu a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding-left: 15px;
+  height: 24px;
+  line-height: 24px;
+}
+.navbar-dropmenu a:hover {
+  background: #CCC;
+}
+.navbar-dropmenu .drop-divider {
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #CCC;
+  margin: 3px 0;
+}

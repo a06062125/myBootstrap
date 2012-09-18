@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>expl</title>
+<script language="javascript">
+var nowid=0;
+var maxid=5;
+var next;
+var prev;
+function fn1()
+{
+    nowid++;
+    if(nowid>maxid){
+        nowid=1;
+    }
+    if(nowid<1){
+        nowid=maxid;
+    }
+    prev=nowid-1;
+    next=nowid+1;
+    if(next>maxid){
+        next=1;
+    }
+    if(prev<1){
+        prev=maxid;
+    }
+    document.getElementById('txt').innerHTML=document.getElementById('id_'+nowid).title;
+    document.getElementById('prev').innerHTML=document.getElementById('id_'+prev).title;
+    document.getElementById('next').innerHTML=document.getElementById('id_'+next).title;
+}
+
+function fn2()
+{
+    nowid--;
+    if(nowid>maxid){
+        nowid=1;
+    }
+    if(nowid<1){
+        nowid=maxid;
+    }
+    prev=nowid-1;
+    next=nowid+2;
+    if(next>maxid){
+        next=1;
+    }
+    if(prev<1){
+        prev=maxid;
+    }
+    document.getElementById('txt').innerHTML=document.getElementById('id_'+nowid).title;
+    document.getElementById('prev').innerHTML=document.getElementById('id_'+prev).title;
+    document.getElementById('next').innerHTML=document.getElementById('id_'+next).title;
+}
+
+window.onload=(function(){fn1();});
+</script>
+
+
+    </head>
+    <body>
+<div>
+<a title="这是1" id="id_1">这是1</a><br>
+<a title="这是2" id="id_2">这是2</a><br>
+<a title="这是3" id="id_3">这是3</a><br>
+<a title="这是4" id="id_4">这是4</a><br>
+<a title="这是5" id="id_5">这是5</a><br>
+</div>
+<br><br>
+<br>
+<style>
+.go{
+padding:5px;
+border:solid 1px;
+}
+</style>
+<span id="ptxt" class='go'></span>
+<span id="txt" class='go'>现</span>
+<span id="ntxt" class='go'></span>
+<br>
+<br>
+<input value="后" id="prev" type='button'  />
+<input value="前" id="next" type='button' />
+<script type="text/javascript" >
+var data=document.getElementsByTagName("a"),
+	index=0,
+	prevStore;
+var $=function(id){
+	return document.getElementById(id);	
+}
+function show(){
+	$("txt").innerHTML=data[index].innerHTML;
+	$("ntxt").innerHTML=data[(index+1)%data.length].innerHTML;
+	if(prevStore>-1){
+	    $("ptxt").innerHTML=data[prevStore].innerHTML;	
+	}
+	else{
+		  $("ptxt").innerHTML="";	
+	}
+}
+
+function prev(){
+	if(prevStore==-1){
+		return ;	
+	}
+	index=prevStore;
+	prevStore=-1;
+	//$("prev").style.display="none";
+	show();
+}
+function next(){
+	prevStore=index;
+	index++;
+	index%=data.length;
+	//$("prev").style.display="";
+	show();
+}
+
+$("prev").onclick=prev;
+$("next").onclick=next;
+</script>
+    </body>
+</html>
